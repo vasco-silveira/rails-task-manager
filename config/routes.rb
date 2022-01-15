@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   # Fetch all tasks
   get '/tasks', to: 'tasks#index'
   # Fetch one task
+  get "tasks/new", to: "tasks#new" # display the form
   get "tasks/:id", to: "tasks#show", as: :task
+  # Create a task
+  post "tasks", to: "tasks#create"
 end
