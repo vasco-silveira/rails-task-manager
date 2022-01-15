@@ -13,8 +13,8 @@ class TasksController < ApplicationController
 
   def create
     @tasks = Task.new(task_params)
-    @task.save
-    redirect_to task_path(@task)
+    @tasks.save
+    redirect_to task_path(@tasks)
   end
 
   def edit
@@ -29,6 +29,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:restaurant).permit(:name, :address, :rating)
+    params.require(:task).permit(:title, :details, :completed)
   end
 end
