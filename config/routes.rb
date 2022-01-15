@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # Fetch all tasks
   get '/tasks', to: 'tasks#index'
   # Fetch one task
+  get "tasks/:id", to: "tasks#show", as: :task
 end
